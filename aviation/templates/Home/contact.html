@@ -1,0 +1,228 @@
+{% extends 'Base/basefile.html' %}{% block title %} Air India Institute | India's leading Aviation &
+Tourism Management Institute{% endblock %}{% block metadescription %}
+<meta name="description" content="" />
+<meta name="tittle" content="" />
+<meta name="keywords" content="" />
+{%endblock %} {% block body %}       
+      <div class="hero__content">
+        <div class="container">
+          <div class="row g-3 justify-content-center">
+            <div class="col-lg-10 text-center">
+              <h1 class="hero__content-title text-capitalize t-text-white">
+                contact with us
+              </h1>
+              <ul class="list list--row breadcrumbs justify-content-center">
+                <li class="list--row__item breadcrumbs__item">
+                  
+                  <a
+                    href="/"
+                    class="
+                      t-link
+                      breadcrumbs__link
+                      text-uppercase
+                      t-text-white
+                      t-link--primary
+                    "
+                    >home</a
+                  >
+                </li>
+                <li class="list--row__item breadcrumbs__item">
+                  <a
+                    href="{% url 'Home:contact' %}"
+                    class="
+                      t-link
+                      breadcrumbs__link
+                      text-uppercase
+                      t-text-white
+                      t-link--primary
+                    "
+                    >contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Contact  -->
+    <div class="section">
+      <div class="container">
+        <div class="row gy-5 gy-md-0 gx-xl-5 align-items-center">
+          <div class="col-md-6 col-xl-5">
+            <ul class="list list--column">
+              <li class="list--column__item-xl">
+                <div class="d-flex align-items-center bg--light-1 p-3 p-lg-4">
+                  <div class="flex-shrink-0 contact-icon-box--primary">
+                    <img
+                      src="/static/assets/img/icon-location-pin-primary.png"
+                      alt="viserfly"
+                      class="contact-icon"
+                    />
+                  </div>
+                  <div class="ms-5">
+                    <p
+                      class="
+                        mb-2
+                        fw-bold
+                        text-capitalize
+                        t-text-heading
+                        xl-text
+                      "
+                    >
+                      Office Address
+                    </p>
+                    <p class="mb-0">28 Benin, south of Niger #5 San</p>
+                    <p class="mb-0">Francisco, United States of America</p>
+                  </div>
+                </div>
+              </li>
+              <li class="list--column__item-xl">
+                <div class="d-flex align-items-center bg--light-1 p-3 p-lg-4">
+                  <div class="flex-shrink-0 contact-icon-box--primary">
+                    <img
+                      src="/static/assets/img/icon-paper-plane-primary.png"
+                      alt="viserfly"
+                      class="contact-icon"
+                    />
+                  </div>
+                  <div class="ms-5">
+                    <p
+                      class="
+                        mb-2
+                        fw-bold
+                        text-capitalize
+                        t-text-heading
+                        xl-text
+                      "
+                    >
+                      Email Address
+                    </p>
+                    <p class="mb-0"><a href="https://template.viserlab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="aec6cbc2c2c1eecacbc3c1ddc7dacb80cdc1c3">[email&#160;protected]</a></p>
+                    <p class="mb-0"><a href="https://template.viserlab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="4b3f2228202e3f0b28322a392965282426">[email&#160;protected]</a></p>
+                  </div>
+                </div>
+              </li>
+              <li class="list--column__item-xl">
+                <div class="d-flex align-items-center bg--light-1 p-3 p-lg-4">
+                  <div class="flex-shrink-0 contact-icon-box--primary">
+                    <img
+                      src="/static/assets/img/icon-phone-primary.png"
+                      alt="viserfly"
+                      class="contact-icon"
+                    />
+                  </div>
+                  <div class="ms-5">
+                    <p
+                      class="
+                        mb-2
+                        fw-bold
+                        text-capitalize
+                        t-text-heading
+                        xl-text
+                      "
+                    >
+                      Phone Number
+                    </p>
+                    <p class="mb-0">+123 - 456 - 7890 - 124</p>
+                    <p class="mb-0">+123 - 456 - 7890 - 125</p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-6 col-xl-7">
+            <div class="query bg--light-1">
+              <h3
+                class="
+                  query__title
+                  text-center text-md-start text-capitalize
+                  mt-0
+                "
+              >
+                Send Your Messages
+              </h3>
+              <form action="{% url 'Home:contact' %}" method="POST" class="row g-4">
+                {% csrf_token %}
+                <div class="col-12">
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    class="
+                      form-control
+                      form-control-custom
+                      form-control-custom--outline
+                      form-control-custom--outline-dark
+                    "
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="col-12">
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    class="
+                      form-control
+                      form-control-custom
+                      form-control-custom--outline
+                      form-control-custom--outline-dark
+                    "
+                    placeholder="Email Address"
+                  />
+                </div>
+                <div class="col-12">
+                  <input
+                    type="text"
+                    name="phone"
+                    required
+                    class="
+                      form-control
+                      form-control-custom
+                      form-control-custom--outline
+                      form-control-custom--outline-dark
+                    "
+                    placeholder="Your Phone Number"
+                  />
+                </div>
+                <div class="col-12">
+                  <textarea
+                   name="message"
+                   required
+                    cols="30"
+                    rows="5"
+                    class="
+                      form-control
+                      form-control-custom--outline form-control-custom--dark
+                    "
+                    placeholder="Writing Something"
+                  ></textarea>
+                </div>
+                <div class="col-12">
+                  <input class="btn btn-outline-primary" type="submit" value="Submit Now">
+                  </a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- GMap  -->
+    <div class="container-fluid p-0">
+      <div class="row g-0">
+        <div class="col-12">
+          <div class="gmap">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3595.413141795992!2d84.42520667941066!3d25.690741753273496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399284d0e361a733%3A0x40dd8dcddfd2247c!2sGoreriya%2C%20Bihar%20802166!5e0!3m2!1sen!2sin!4v1693658139431!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- GMap End -->
+    {% endblock %}
+

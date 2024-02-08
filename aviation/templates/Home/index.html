@@ -1,0 +1,1405 @@
+{% extends 'Base/basefile.html' %}{% block title %} Air India Institute | India's leading Aviation &
+Tourism Management Institute{% endblock %}{% block metadescription %}
+<meta name="description" content="" />
+<meta name="tittle" content="" />
+<meta name="keywords" content="" />
+{%endblock %} {% block body %}      
+      <div class="hero__content">
+        <div class="container">
+          <div class="row g-3 justify-content-center">
+            <div class="col-lg-10 text-center">
+              <h1 class="hero__content-title text-capitalize t-text-white">
+                Build Our Career in Aviation Field With MCA Approved Institute
+              </h1>
+              <a href="{% url 'Home:Online-Admission' %}" class="btn btn--xxl xl-text btn--primary mt-3">
+                Become an Pilot
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img
+        src="/.png"
+        alt="viserfly"
+        class="hero__img-anime"
+      />
+    </div>
+    <!-- Hero End -->
+
+    <!-- About Section  -->
+    <section class="section--sm section--bottom">
+      <div class="container">
+        <div
+          class="
+            row
+            justify-content-center
+            align-items-lg-center
+            justify-content-xl-between
+          "
+        >
+          <div class="col-md-10 col-lg-6 col-xl-5 text-center text-lg-start">
+            <div
+              class="
+                d-flex
+                align-items-center
+                justify-content-center justify-content-lg-start
+              "
+            >
+              <div class="vf-custom-icon me-2 flex-shrink-0">
+                <img
+                  src="/static/assets/img/icon-plane.png"
+                  alt="viserfly"
+                  class="img-fluid"
+                />
+              </div>
+              <p class="mb-0 text-capitalize text--primary xxl-text">about</p>
+            </div>
+            <h2>We’re here to make your dreams come true!</h2>
+            <p class="t-short-para" style="text-align: justify;">
+              Welcome to the Aviation Institute, your gateway to a successful career in the aviation industry. We are a premier educational institution dedicated to providing comprehensive training and knowledge to aspiring aviation professionals. With our state-of-the-art facilities and experienced faculty, we aim to equip our students with the skills and expertise necessary to excel in this dynamic and fast-paced industry.
+            </p>
+            <a
+              href="{% url 'Home:about' %}"
+              class="t-link btn btn--xl xl-text btn--primary"
+            >
+              About Us
+            </a>
+          </div>
+          <div class="col-lg-6 col-xl-7 d-none d-lg-block">
+            <img
+              src="/static/assets/img/about-img.png"
+              alt="viserfly"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About Section End -->
+
+    <!-- Course Section  -->
+    <section class="section course-section">
+      <div class="section__head">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-6">
+              <div class="text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="vf-custom-icon me-2 flex-shrink-0">
+                    <img
+                      src="/static/assets/img/icon-plane.png"
+                      alt="viserfly"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <p class="mb-0 text-capitalize text--primary xxl-text">
+                    courses
+                  </p>
+                </div>
+                <h2 class="text-capitalize mb-0">Our Aviation Training Cources</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row gy-4 gy-xxl-5 justify-content-center">
+          {% for c in course %}
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                {% if c.course_img %}
+                <img
+                  src="{{c.course_img.url}}"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+                {% endif %}
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">{{c.course_title}}</h4>
+                <p>
+                  <a href="{% url 'Home:coursedetailview' c.course_slug %}" class="t-link blog-post__title">{{c.course_descp | safe | slice:":100"}}.....</a>
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    <span class="price">₹ {{c.course_price}}</span>
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    {{c.course_stu}} Students 
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    {{c.course_lessons}} Lessons  
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          
+          <!-- <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/course-img-2.png"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">ATP Courses</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/course-img-3.png"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">Aircaft Maintenance</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/course-img-4.jpg"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">Air Traffic Control</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    <!-- Course Section End -->
+
+    <!-- Trainer Section  -->
+    <!-- Trainer Section End -->
+
+    <!-- Feature Section  -->
+    <section class="section--sm">
+      <div class="container">
+        <div
+          class="
+            row
+            justify-content-center
+            align-items-lg-center
+            justify-content-xl-between
+          "
+        >
+          <div class="col-md-10 col-lg-6 col-xl-5">
+            <div class="text-center text-lg-start">
+              <div
+                class="
+                  d-flex
+                  align-items-center
+                  justify-content-center justify-content-lg-start
+                "
+              >
+                <div class="vf-custom-icon me-2 flex-shrink-0">
+                  <img
+                    src="/static/assets/img/icon-plane.png"
+                    alt="viserfly"
+                    class="img-fluid"
+                  />
+                </div>
+                <p class="mb-0 text-capitalize text--primary xxl-text">
+                  features
+                </p>
+              </div>
+              <h2>Choose Our Best Aeronautics Academy</h2>
+              <p class="t-short-para">
+                Choosing the best flying academy is crucial for aspiring pilots to receive quality training, develop essential skills, and establish a strong foundation for their aviation careers. While the choice ultimately depends on individual preferences and specific requirements,
+              </p>
+            </div>
+            <div class="t-mt-40">
+              <div class="row g-4 g-md-3">
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div class="flex-shrink-0">
+                      <img
+                        src="/static/assets/img/icon-headphone.png"
+                        alt="viserfly"
+                        class="img-fluid flex-shrink-0"
+                      />
+                    </div>
+                    <div class="ms-3">
+                      <h5
+                        class="
+                          text-capitalize
+                          mt-0
+                          t-body-font
+                          fw-md
+                          text-start
+                        "
+                      >
+                        24/7 Support
+                      </h5>
+                      <p class="mb-0 text-start">
+                        Safety should be a top priority for any flying academy. Inquire about the academy's safety practices, protocols, and safety record. A strong safety culture ensures that you receive training in a secure and responsible environment.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div class="flex-shrink-0">
+                      <img
+                        src="/static/assets/img/icon-donate.png"
+                        alt="viserfly"
+                        class="img-fluid flex-shrink-0"
+                      />
+                    </div>
+
+                    <div class="ms-3">
+                      <h5
+                        class="
+                          text-capitalize
+                          mt-0
+                          t-body-font
+                          fw-md
+                          text-start
+                        "
+                      >
+                        Low Cost
+                      </h5>
+                      <p class="mb-0 text-start">
+                        Cost and Financial Considerations: Consider the cost of training, including tuition fees, flight hours, accommodation, and other associated expenses. Compare the costs of different academies while keeping in mind the quality of training and support provided.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="t-mt-40">
+              <div class="row g-4 g-md-3">
+                <div class="col-md-6">
+                  <img
+                    src="/static/assets/img/ga-pilot-feature_55182.jpg"
+                    alt="viserfly"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <ul class="list list--primary list--column">
+                    <li class="list__item list--column__item-sm">
+                      You must have a diploma
+                    </li>
+                    <li class="list__item list--column__item-sm">
+                      Must have medical certificat
+                    </li>
+                    <li class="list__item list--column__item-sm">
+                      You must be 16 years old
+                    </li>
+                    <li class="list__item list--column__item-sm">
+                      You must have a diploma
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-7 d-none d-lg-block">
+            <img
+              src="/static/assets/img/feature-img.png"
+              alt="viserfly"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Feature Section End -->
+
+    <!-- FAQ  -->
+    <section class="section--sm section--bottom">
+      <div class="section__head">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+              <div class="text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="vf-custom-icon me-2 flex-shrink-0">
+                    <img
+                      src="/static/assets/img/icon-plane.png"
+                      alt="viserfly"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <p class="mb-0 text-capitalize text--primary xxl-text">FAQ</p>
+                </div>
+                <h2 class="text-capitalize">Frequently Asked questions</h2>
+                <p class="t-short-para mx-auto mb-0">
+                  The aviation field offers a range of exciting opportunities and benefits that may attract individuals to pursue a career in this industry. Here are some reasons why people choose the aviation field:
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <div class="col-12">
+            <ul class="list list--row justify-content-center list-group">
+              <li class="list--row__item-sm  active">
+                <a
+                  class="
+                    btn btn--md btn--outline
+                    active
+                    text-capitalize
+                    fw-md
+                    t-text
+                  "
+                  href=""
+                  data-bs-toggle="list"
+
+                >
+                  All Question Related to Aviation
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-10 col-xl-8">
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="list-home">
+                <div class="accordion vf-accordion" id="faqAccordion">
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne"
+                        aria-expanded="true"
+                      >
+                        Why You should become an Aeronautics?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        <strong>Innovation and Technological Advancements:</strong> The aerospace industry is at the forefront of technological innovation. As an aerospace professional, you will be involved in developing cutting-edge technologies, designing advanced aircraft and spacecraft systems, and pushing the boundaries of engineering and science. Being part of this industry allows you to contribute to groundbreaking discoveries and advancements that shape the future of aviation and space exploration.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo"
+                        aria-expanded="false"
+                      >
+                        Career path in aviation fields?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        <strong>Exciting and Dynamic Work Environment:</strong> The aviation industry is known for its fast-paced and ever-changing nature. No two days are the same in this field, and you will constantly face new challenges and experiences. Whether you are a pilot, an aircraft engineer, an air traffic controller, or involved in aviation management, the industry provides an exhilarating and dynamic work environment.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree"
+                        aria-expanded="false"
+                      >
+                        Why You Choose Aviation fields?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        <strong>Thrilling and Dynamic Work Environment: </strong>The aviation industry is known for its fast-paced and dynamic nature. Whether you're working as a pilot, air traffic controller, aircraft engineer, or in aviation management, you'll experience a thrilling work environment that presents new challenges and opportunities for growth.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour"
+                        aria-expanded="false"
+                      >
+                        What is Airport Management?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        Airport management refers to the overall administration, coordination, and operation of an airport facility. It encompasses various functions and responsibilities aimed at ensuring the smooth and efficient functioning of an airport and providing a positive experience for passengers, airlines, and other stakeholders. Airport management involves both strategic planning and day-to-day operations to maintain safety, security, and high-quality services.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="list-profile">
+                <div class="accordion vf-accordion" id="faqAccordion2">
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne2"
+                        aria-expanded="true"
+                      >
+                        Why You should become an Investor?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne2"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#faqAccordion2"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        tara ipsum dolor sit amet consectetur adipisicing elit.
+                        Natus quos numquam atque exercitationem reprehenderit
+                        voluptas dolores ad repudiandae asperiores. Excepturi error
+                        dolor at veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo2"
+                        aria-expanded="false"
+                      >
+                        Can I Invest Using Cryptocurrency?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo2"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion2"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        she ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        quos numquam atque exercitationem reprehenderit voluptas
+                        dolores ad repudiandae asperiores. Excepturi error dolor at
+                        veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree2"
+                        aria-expanded="false"
+                      >
+                        Why You Choose Us?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree2"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion2"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        tumi ipsum dolor sit amet consectetur adipisicing elit.
+                        Natus quos numquam atque exercitationem reprehenderit
+                        voluptas dolores ad repudiandae asperiores. Excepturi error
+                        dolor at veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour2"
+                        aria-expanded="false"
+                      >
+                        Why You should become an Investor?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour2"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion2"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        ami ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        quos numquam atque exercitationem reprehenderit voluptas
+                        dolores ad repudiandae asperiores. Excepturi error dolor at
+                        veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="list-messages">
+                <div class="accordion vf-accordion" id="faqAccordion3">
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne3"
+                        aria-expanded="true"
+                      >
+                        Why You should become an Investor?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne3"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#faqAccordion3"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        tara ipsum dolor sit amet consectetur adipisicing elit.
+                        Natus quos numquam atque exercitationem reprehenderit
+                        voluptas dolores ad repudiandae asperiores. Excepturi error
+                        dolor at veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo3"
+                        aria-expanded="false"
+                      >
+                        Can I Invest Using Cryptocurrency?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo3"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion3"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        she ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        quos numquam atque exercitationem reprehenderit voluptas
+                        dolores ad repudiandae asperiores. Excepturi error dolor at
+                        veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree3"
+                        aria-expanded="false"
+                      >
+                        Why You Choose Us?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree3"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion3"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        tumi ipsum dolor sit amet consectetur adipisicing elit.
+                        Natus quos numquam atque exercitationem reprehenderit
+                        voluptas dolores ad repudiandae asperiores. Excepturi error
+                        dolor at veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour3"
+                        aria-expanded="false"
+                      >
+                        Why You should become an Investor?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour3"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion3"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        ami ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        quos numquam atque exercitationem reprehenderit voluptas
+                        dolores ad repudiandae asperiores. Excepturi error dolor at
+                        veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="list-test">
+                <div class="accordion vf-accordion" id="faqAccordion4">
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne4"
+                        aria-expanded="true"
+                      >
+                        Why You should become an Investor?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseOne4"
+                      class="accordion-collapse collapse show"
+                      data-bs-parent="#faqAccordion4"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        tara ipsum dolor sit amet consectetur adipisicing elit.
+                        Natus quos numquam atque exercitationem reprehenderit
+                        voluptas dolores ad repudiandae asperiores. Excepturi error
+                        dolor at veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo4"
+                        aria-expanded="false"
+                      >
+                        Can I Invest Using Cryptocurrency?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseTwo4"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion4"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        she ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        quos numquam atque exercitationem reprehenderit voluptas
+                        dolores ad repudiandae asperiores. Excepturi error dolor at
+                        veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree4"
+                        aria-expanded="false"
+                      >
+                        Why You Choose Us?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseThree4"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion4"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        tumi ipsum dolor sit amet consectetur adipisicing elit.
+                        Natus quos numquam atque exercitationem reprehenderit
+                        voluptas dolores ad repudiandae asperiores. Excepturi error
+                        dolor at veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item vf-accordion__item">
+                    <h2 class="accordion-header vf-accordion__header">
+                      <button
+                        class="accordion-button vf-accordion__btn"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour4"
+                        aria-expanded="false"
+                      >
+                        Why You should become an Investor?
+                      </button>
+                    </h2>
+                    <div
+                      id="collapseFour4"
+                      class="accordion-collapse collapse"
+                      data-bs-parent="#faqAccordion4"
+                    >
+                      <div class="accordion-body vf-accordion__body">
+                        ami ipsum dolor sit amet consectetur adipisicing elit. Natus
+                        quos numquam atque exercitationem reprehenderit voluptas
+                        dolores ad repudiandae asperiores. Excepturi error dolor at
+                        veniam, modi vel quos tempora pariatur eaque.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FAQ End -->
+
+    <!-- Gallery Section  -->
+    <section class="section" style="margin-top: -161px;">
+      <div class="section__head">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+              <div class="text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="vf-custom-icon me-2 flex-shrink-0">
+                    <img
+                      src="/static/assets/img/icon-plane.png"
+                      alt="viserfly"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <p class="mb-0 text-capitalize text--primary xxl-text">
+                    gallery
+                  </p>
+                </div>
+                <h2 class="text-capitalize">Our Photo Gallery</h2>
+                <p class="t-short-para mx-auto mb-0">
+                  This photo captures the essence of a dynamic and engaging classroom session at our institute. Students are actively participating, discussing ideas, and collaborating with their peers. The atmosphere is filled with enthusiasm and intellectual curiosity.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center g-4">
+          <div class="col-12">
+            <ul class="list list--row justify-content-center">
+              <li class="list--row__item-sm">
+                <button
+                  class="
+                    btn btn--md btn--outline
+                    active
+                    text-capitalize
+                    fw-md
+                    t-text
+                  "
+                  data-filter="all"
+                >
+                  Best Part of Life During Training
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="col-12">
+            <div class="row filter-container g-0">
+              <div class="col-md-6 col-lg-4 filtr-item"  data-category="web" data-sort="value">
+                <div class="gallery-photo">
+                  <img
+                    src="/static/assets/img/ab1.jpg"
+                    alt="viserfly"
+                    class="gallery-photo__img"
+                  />
+                  <div class="gallery-photo__content">
+                    <p class="xxl-text text-capitalize t-text-white">
+                      crew training
+                    </p>
+                    <ul class="list list--row">
+                      <li class="list--row__item">
+                        <a
+                          href="/static/assets/img/ab2.jpeg"
+                          class="t-link gallery-photo-magnify gallery-photo__icon btn btn--sqr"
+                        >
+                          <i class="bx bx-show"></i>
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 filtr-item" data-category="branding" data-sort="value">
+                <div class="gallery-photo">
+                  <img
+                    src="/static/assets/img/ab3.jpg"
+                    alt="viserfly"
+                    class="gallery-photo__img"
+                  />
+                  <div class="gallery-photo__content">
+                    <p class="xxl-text text-capitalize t-text-white">
+                      crew training
+                    </p>
+                    <ul class="list list--row">
+                      <li class="list--row__item">
+                        <a
+                          href="/static/assets/img/ab4.jpg"
+                          class="t-link gallery-photo-magnify gallery-photo__icon btn btn--sqr"
+                        >
+                          <i class="bx bx-show"></i>
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 filtr-item" data-category="web" data-sort="value">
+                <div class="gallery-photo">
+                  <img
+                    src="/static/assets/img/ab5.webp"
+                    alt="viserfly"
+                    class="gallery-photo__img"
+                  />
+                  <div class="gallery-photo__content">
+                    <p class="xxl-text text-capitalize t-text-white">
+                      crew training
+                    </p>
+                    <ul class="list list--row">
+                      <li class="list--row__item">
+                        <a
+                          href="/static/assets/img/ab6.png"
+                          class="t-link gallery-photo-magnify gallery-photo__icon btn btn--sqr"
+                        >
+                          <i class="bx bx-show"></i>
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 filtr-item" data-category="branding" data-sort="value">
+                <div class="gallery-photo">
+                  <img
+                    src="/static/assets/img/ab4.jpg"
+                    alt="viserfly"
+                    class="gallery-photo__img"
+                  />
+                  <div class="gallery-photo__content">
+                    <p class="xxl-text text-capitalize t-text-white">
+                      crew training
+                    </p>
+                    <ul class="list list--row">
+                      <li class="list--row__item">
+                        <a
+                          href="/static/assets/img/ab5.webp"
+                          class="t-link gallery-photo-magnify gallery-photo__icon btn btn--sqr"
+                        >
+                          <i class="bx bx-show"></i>
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 filtr-item" data-category="seo" data-sort="value">
+                <div class="gallery-photo">
+                  <img
+                    src="/static/assets/img/ab6.png"
+                    alt="viserfly"
+                    class="gallery-photo__img"
+                  />
+                  <div class="gallery-photo__content">
+                    <p class="xxl-text text-capitalize t-text-white">
+                      crew training
+                    </p>
+                    <ul class="list list--row">
+                      <li class="list--row__item">
+                        <a
+                          href="/static/assets/img/gal-5.png"
+                          class="t-link gallery-photo-magnify gallery-photo__icon btn btn--sqr"
+                        >
+                          <i class="bx bx-show"></i>
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4 filtr-item" data-category="branding" data-sort="value">
+                <div class="gallery-photo">
+                  <img
+                    src="/static/assets/img/gal-6.png"
+                    alt="viserfly"
+                    class="gallery-photo__img"
+                  />
+                  <div class="gallery-photo__content">
+                    <p class="xxl-text text-capitalize t-text-white">
+                      crew training
+                    </p>
+                    <ul class="list list--row">
+                      <li class="list--row__item">
+                        <a
+                          href="/static/assets/img/gal-6.png"
+                          class="t-link gallery-photo-magnify gallery-photo__icon btn btn--sqr"
+                        >
+                          <i class="bx bx-show"></i>
+                        </a>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Gallery Section End -->
+
+    <!-- CTA  -->
+    <div class="section cta-section">
+      <div class="container">
+        <div class="row g-4 justify-content-xxl-between align-items-center">
+          <div class="col-lg-6 col-xxl-5">
+            <ul class="list counter-list">
+              <li class="counter-list__item">
+                <h1
+                  class="
+                    odometer--plus odometer--custom
+                    mt-0
+                    mb-0
+                    text-uppercase
+                    t-text-white
+                    text-center
+                  "
+                >
+                  <span class="odometer odometer--custom" id="totalStaff"
+                    >122</span
+                  >
+                </h1>
+                <p
+                  class="mb-0 t-text-white text-capitalize xxl-text text-center"
+                >
+                  total staffs
+                </p>
+              </li>
+              <li class="counter-list__item">
+                <h1
+                  class="
+                    mt-0
+                    mb-0
+                    odometer--custom
+                    text-uppercase
+                    t-text-white
+                    text-center
+                  "
+                >
+                  <span class="odometer" id="totalAward">196</span>
+                </h1>
+                <p
+                  class="mb-0 t-text-white text-capitalize xxl-text text-center"
+                >
+                  winning awards
+                </p>
+              </li>
+              <li class="counter-list__item">
+                <h1
+                  class="
+                    mt-0
+                    mb-0
+                    odometer--custom
+                    text-uppercase
+                    t-text-white
+                    text-center
+                  "
+                >
+                  <span class="odometer" id="totalStudent">3754</span>
+                </h1>
+                <p
+                  class="mb-0 t-text-white text-capitalize xxl-text text-center"
+                >
+                  happy students
+                </p>
+              </li>
+              <li class="counter-list__item">
+                <h1
+                  class="
+                    odometer--plus odometer--custom
+                    mt-0
+                    mb-0
+                    text-uppercase
+                    t-text-white
+                    text-center
+                  "
+                >
+                  <span class="odometer" id="totalCourse">16</span>
+                </h1>
+                <p
+                  class="mb-0 t-text-white text-capitalize xxl-text text-center"
+                >
+                  total courses
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-xxl-5">
+            <div class="row">
+              <div class="col-12">
+                <div class="query bg--light">
+                  <h3
+                    class="
+                      query__title
+                      text-center text-lg-start text-capitalize
+                      mt-0
+                    "
+                  >
+                    join with us
+                  </h3>
+                  <form action="/" method="POST" class="row g-4">
+                    {% csrf_token %}
+                    <div class="col-12">
+                      <input
+                        type="email"
+                        name="email"
+                        required
+                        class="
+                          form-control
+                          form-control-custom
+                          form-control-custom--outline
+                          form-control-custom--outline-dark
+                        "
+                        placeholder="email address"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <div class="custom--nice-select">
+                        
+                         <input
+                            type="text"
+                            name="phone"
+                            required
+                            data-error="Please enter your number"
+                            class="form-control
+                            form-control-custom
+                            form-control-custom--outline
+                            form-control-custom--outline-dark"
+                            placeholder="your number"
+                            />
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <textarea
+                        cols="30"
+                        name="message"
+                        rows="5"
+
+                        required
+                        class="
+                          form-control
+                          form-control-custom--outline form-control-custom--dark
+                        "
+                        placeholder="Writing Something"
+                      ></textarea>
+                    </div>
+                    <div class="form-group mb-0">
+                      <input class="btn-send mt-4" type="submit" value="Submit Now">
+                  </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CTA End -->
+
+    <!-- Blog Section  -->
+    <section class="section">
+      <div class="section__head">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-md-8 col-xl-8">
+              <div class="text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                  <div class="vf-custom-icon me-2 flex-shrink-0">
+                    <img
+                      src="/static/assets/img/icon-plane.png"
+                      alt="viserfly"
+                      class="img-fluid"
+                    />
+                  </div>
+                  <p class="mb-0 text-capitalize text--primary xxl-text">
+                    blog post
+                  </p>
+                </div>
+                <h2 class="text-capitalize">Our latest blog</h2>
+                <p class="t-short-para mx-auto mb-0">
+                  Our latest blog post is dedicated to unveiling unique destinations that often go unnoticed by the mainstream traveler.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          {% for b in bl %}
+          <div class="col-md-6 col-lg-4">
+            <div class="blog-post">
+              <a href="{% url 'Home:blogdetailview' b.blog_slug %}" class="t-link blog-post__img">
+                {% if b.blog_img %}
+                <img
+                  src="{{b.blog_img.url}}"
+                  alt="viserfly"
+                  class="blog-post__img-is"
+                />
+                {% endif %}
+              </a>
+              <div class="blog-post__body">
+                <div class="blog-post__date">
+                  <h4 class="mt-0 mb-1 t-text-white">{{b.blog_date}} </h4>
+                  <p class="mb-0 t-text-white text-capitalize">may</p>
+                </div>
+                <h4 class="text-capitalize mt-0">
+                  <a href="{% url 'Home:blogdetailview' b.blog_slug %}" class="t-link blog-post__title">
+                    {{b.blog_title}}
+                  </a>
+                </h4>
+                <ul class="list list--row">
+                  <li class="list--row__item">
+                    <div class="blog-post__meta">
+                      <div class="blog-post__meta-icon me-2">
+                        <i class="bx bxs-user"></i>
+                      </div>
+                      <div class="blog-post__meta-text text-uppercase">
+                        By
+                        <a href="{% url 'Home:blogdetailview' b.blog_slug %}" class="t-link t-link--primary t-text"
+                          >{{b.blog_author}} </a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list--row__item">
+                    <div class="blog-post__meta">
+                      <div class="blog-post__meta-icon me-2">
+                        <i class="bx bx-message-dots"></i>
+                      </div>
+                      <div class="blog-post__meta-text text-uppercase">
+                        <a href="" class="t-link t-link--primary t-text"
+                          >25 comments</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <p class="blog-post__article mt-4 mb-0">
+                  {{b.blog_desp | safe | slice:":100"}}... 
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- <div class="col-md-6 col-lg-4">
+            <div class="blog-post">
+              <a href="blog-details.html" class="t-link blog-post__img">
+                
+                <img
+                  src="{{b.blog_img.url}}"
+                  alt="viserfly"
+                  class="blog-post__img-is"
+                />
+              </a>
+              <div class="blog-post__body">
+                <div class="blog-post__date">
+                  <h4 class="mt-0 mb-1 t-text-white"> </h4>
+                  <p class="mb-0 t-text-white text-capitalize">may</p>
+                </div>
+                <h4 class="text-capitalize mt-0">
+                  <a href="blog-details.html" class="t-link blog-post__title">
+                    
+                  </a>
+                </h4>
+                <ul class="list list--row">
+                  <li class="list--row__item">
+                    <div class="blog-post__meta">
+                      <div class="blog-post__meta-icon me-2">
+                        <i class="bx bxs-user"></i>
+                      </div>
+                      <div class="blog-post__meta-text text-uppercase">
+                        By
+                        <a href="blog-post.html" class="t-link t-link--primary t-text"
+                          > </a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list--row__item">
+                    <div class="blog-post__meta">
+                      <div class="blog-post__meta-icon me-2">
+                        <i class="bx bx-message-dots"></i>
+                      </div>
+                      <div class="blog-post__meta-text text-uppercase">
+                        <a href="" class="t-link t-link--primary t-text"
+                          >25 comments</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <p class="blog-post__article mt-4 mb-0">
+                  
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="blog-post">
+              <a href="blog-details.html" class="t-link blog-post__img">
+                <img
+                  src="/static/assets/img/team-3.jpg"
+                  alt="viserfly"
+                  class="blog-post__img-is"
+                />
+              </a>
+              <div class="blog-post__body">
+                <div class="blog-post__date">
+                  <h4 class="mt-0 mb-1 t-text-white">26</h4>
+                  <p class="mb-0 t-text-white text-capitalize">may</p>
+                </div>
+                <h4 class="text-capitalize mt-0">
+                  <a href="blog-details.html" class="t-link blog-post__title">
+                    Faucibus Nullam Quis Ante Eti Qrci Egetros Saucibus Tincnt.
+                  </a>
+                </h4>
+                <ul class="list list--row">
+                  <li class="list--row__item">
+                    <div class="blog-post__meta">
+                      <div class="blog-post__meta-icon me-2">
+                        <i class="bx bxs-user"></i>
+                      </div>
+                      <div class="blog-post__meta-text text-uppercase">
+                        By
+                        <a href="blog-post.html" class="t-link t-link--primary t-text"
+                          >Robart Jons</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li class="list--row__item">
+                    <div class="blog-post__meta">
+                      <div class="blog-post__meta-icon me-2">
+                        <i class="bx bx-message-dots"></i>
+                      </div>
+                      <div class="blog-post__meta-text text-uppercase">
+                        <a href="blog-post.html" class="t-link t-link--primary t-text"
+                          >25 comments</a
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <p class="blog-post__article mt-4 mb-0">
+                  Donec interdum metus ehendrerit auet doldiam sagittis ligula
+                  eget egestas libero turpis velsra smiunc nulla testa peina ola
+                  oreso loerm ipsums amet
+                </p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+    {% endblock %}
+    <!-- Blog Section End -->
+
+    <!-- CTA  -->
+   

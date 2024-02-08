@@ -1,0 +1,253 @@
+{% extends 'Base/basefile.html' %}{% block title %} Air India Institute | India's leading Aviation &
+Tourism Management Institute{% endblock %}{% block metadescription %}
+<meta name="description" content="" />
+<meta name="tittle" content="" />
+<meta name="keywords" content="" />
+{%endblock %} {% block body %} 
+      <div class="hero__content">
+        <div class="container">
+          <div class="row g-3 justify-content-center">
+            <div class="col-lg-10 text-center">
+              <h1 class="hero__content-title text-capitalize t-text-white">
+                Training Courses
+              </h1>
+              <ul class="list list--row breadcrumbs justify-content-center">
+                <li class="list--row__item breadcrumbs__item">
+                  <a
+                    href="/"
+                    class="
+                      t-link
+                      breadcrumbs__link
+                      text-uppercase
+                      t-text-white
+                      t-link--primary
+                    "
+                    >home</a
+                  >
+                </li>
+                <li class="list--row__item breadcrumbs__item">
+                  <a
+                    href="{% url 'Home:course' %}"
+                    class="
+                      t-link
+                      breadcrumbs__link
+                      text-uppercase
+                      t-text-white
+                      t-link--primary
+                    "
+                    >Courses</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Banner End -->
+
+    <!-- Course Section  -->
+    <div class="section">
+      <div class="container">
+        <div class="row gy-5 justify-content-center">
+          {% for c in course %}
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                {% if c.course_img %}
+                <img
+                  src="{{c.course_img.url}}"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+                {% endif %}
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize"><a href="{% url 'Home:coursedetailview' c.course_slug %}" class="t-link blog-post__title">{{c.course_title}}</a></h4>
+                <p>
+                  {{c.course_descp | safe | slice:":100"}}.....
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    <span class="price">₹ {{c.course_price}}</span>
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    {{c.course_stu}} Students 
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    {{c.course_lessons}} Lessons 
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/course-img-2.png"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">ATP Courses</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/course-img-3.png"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">Aircaft Maintenance</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/course-img-4.jpg"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">Air Traffic Control</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/gal-2.png"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">safety & risk management</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-10 col-xl-6">
+            <div class="course-card">
+              <div class="course-card__img">
+                <img
+                  src="/static/assets/img/gal-3.png"
+                  alt="viserfly"
+                  class="course-card__img-is"
+                />
+              </div>
+              <div class="course-card__content">
+                <h4 class="text-capitalize">flight operations</h4>
+                <p>
+                  Lorem ipsum dolor sit amnsectetur adipiscing elit, sedo
+                  Training Cources
+                </p>
+                <ul class="list list--primary list--column">
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must have a diploma
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    Must have medical certificat
+                  </li>
+                  <li class="list__item list--column__item-sm">
+                    You must be 16 years old
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- Course Section End -->
+    {% endblock %}
+

@@ -1,0 +1,819 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  
+<!-- Mirrored from template.viserlab.com/viserfly/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Jun 2023 06:34:11 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %} {% endblock %}</title>
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="/static/assets/img/favicon.png"
+      sizes="16x16"
+      type="image/png"
+    />
+    
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="/static/assets/css/lib/bootstrap.min.css" />
+    <!-- Slick  -->
+    <link rel="stylesheet" href="/static/assets/css/lib/slick.css" />
+    <!-- Box Icon  -->
+    <link rel="stylesheet" href="/static/assets/css/lib/boxicons.css" />
+    <!-- Nice Select  -->
+    <link rel="stylesheet" href="/static/assets/css/lib/nice-select.css" />
+    <!-- Odometer  -->
+    <link rel="stylesheet" href="/static/assets/css/lib/odometer-theme-default.css" />
+    <!-- Magnific PopUp -->
+    <link rel="stylesheet" href="/static/assets/css/lib/magnific-popup.css">
+    <!-- Stylesheet Link -->
+    <link rel="stylesheet" href="/static/assets/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <style>
+      .primary-menu__list.has-sub .primary-menu__link::after {
+        display: none;
+    }
+    </style>
+  </head>
+ 
+  <body>
+  
+    {% load sweetify %} {% sweetify %}  
+    <!-- Preloader  -->
+    <!-- <div class="preloader">
+      <div class="preloader__loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div> -->
+    <!-- Preloader End -->
+    <!-- Modal -->
+    <div class="modal fade" id="vfSignIn" tabindex="-1" aria-hidden="true">
+      <div
+        class="
+          modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+        "
+      >
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <div class="auth-form">
+              <button
+                type="button"
+                class="btn-close auth-form__close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <div class="container-fluid p-lg-0">
+                <div class="row g-lg-0">
+                  <div class="col-lg-6 d-none d-lg-block">
+                    <div class="h-100 auth-form__bg"></div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="auth-form__content section">
+                      <h3 class="text-capitalize text-center mt-0 mb-4">
+                        Welcome to Droon Aviation Institute
+                      </h3>
+                      <form action="#" class="row g-4">
+                        <div class="col-12">
+                          <div class="auth-form__input-group">
+                            <span class="auth-form__input-icon">
+                              <i class="bx bxs-user"></i>
+                            </span>
+                            <input
+                              type="text"
+                              class="auth-form__input"
+                              placeholder="user name or email"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="auth-form__input-group">
+                            <span class="auth-form__input-icon">
+                              <i class="bx bx-lock"></i>
+                            </span>
+
+                            <input
+                              type="password"
+                              class="auth-form__input"
+                              placeholder="password"
+                            />
+
+                            <span
+                              class="
+                                auth-form__input-icon auth-form__toggle-pass
+                              "
+                            >
+                              <i class="bx bxs-hide"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <button
+                            class="
+                              btn btn--primary btn--xxl
+                              w-100
+                              text-capitalize
+                              xl-text
+                            "
+                          >
+                            sign in
+                          </button>
+                        </div>
+                        <div class="col-12">
+                          <p class="mb-0 text-capitalize text-center">
+                            Don't have an account yet?
+                            <button
+                            type="button"
+                              class="t-link border-0 bg--light btn-link t-link--primary text--primary"
+                              data-bs-target="#vfSignUp" data-bs-toggle="modal"
+                            >
+                              create account
+                            </button>
+                          </p>
+                        </div>
+                        <div class="col-12">
+                          <div class="auth-form__divider">
+                            <span
+                              class="
+                                d-block
+                                text-center text-capitalize
+                                auth-form__divider-text
+                              "
+                            >
+                              or
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <p class="mb-0 text-capitalize text-center">
+                            Continue with social media
+                          </p>
+                        </div>
+
+                        <div class="col-12">
+                          <ul class="list list--row justify-content-center">
+                            <li class="list--row__item">
+                              <a
+                                href="#"
+                                class="
+                                  t-link
+                                  icon icon--circle icon--md
+                                  bg--primary
+                                  t-text-white
+                                  t-link--light
+                                "
+                              >
+                                <i class="bx bxl-facebook"></i>
+                              </a>
+                            </li>
+                            <li class="list--row__item">
+                              <a
+                                href="#"
+                                class="
+                                  t-link
+                                  icon icon--circle icon--md
+                                  bg--danger
+                                  t-text-white
+                                  t-link--light
+                                "
+                              >
+                                <i class="bx bxl-youtube"></i>
+                              </a>
+                            </li>
+                            <li class="list--row__item">
+                              <a
+                                href="#"
+                                class="
+                                  t-link
+                                  icon icon--circle icon--md
+                                  bg--info
+                                  t-text-white
+                                  t-link--light
+                                "
+                              >
+                                <i class="bx bxl-twitter"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal End-->
+    <!-- Modal 2 -->
+    <div class="modal fade" id="vfSignUp" tabindex="-1" aria-hidden="true">
+      <div
+        class="
+          modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl
+        "
+      >
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <div class="auth-form">
+              <button
+                type="button"
+                class="btn-close auth-form__close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+              <div class="container-fluid p-lg-0">
+                <div class="row g-lg-0">
+                  <div class="col-lg-6 d-none d-lg-block">
+                    <div class="h-100 auth-form__bg"></div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="auth-form__content section">
+                      <h3 class="text-capitalize text-center mt-0 mb-4">
+                        Welcome to Droon Aviation Institute
+                      </h3>
+                      <form action="#" class="row g-4">
+                        <div class="col-12">
+                          <div class="auth-form__input-group">
+                            <span class="auth-form__input-icon">
+                              <i class="bx bxs-user"></i>
+                            </span>
+                            <input
+                              type="text"
+                              class="auth-form__input"
+                              placeholder="user name or email"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="auth-form__input-group">
+                            <span class="auth-form__input-icon">
+                              <i class="bx bx-lock"></i>
+                            </span>
+
+                            <input
+                              type="password"
+                              class="auth-form__input"
+                              placeholder="password"
+                            />
+
+                            <span
+                              class="
+                                auth-form__input-icon auth-form__toggle-pass
+                              "
+                            >
+                              <i class="bx bxs-hide"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <div class="auth-form__input-group">
+                            <span class="auth-form__input-icon">
+                              <i class="bx bx-lock"></i>
+                            </span>
+
+                            <input
+                              type="password"
+                              class="auth-form__input"
+                              placeholder="confirm password"
+                            />
+
+                            <span
+                              class="
+                                auth-form__input-icon auth-form__toggle-pass
+                              "
+                            >
+                              <i class="bx bxs-hide"></i>
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <button
+                            class="
+                              btn btn--primary btn--xxl
+                              w-100
+                              text-capitalize
+                              xl-text
+                            "
+                          >
+                            create account
+                          </button>
+                        </div>
+                        <div class="col-12">
+                          <p class="mb-0 text-capitalize text-center">
+                            Already have an account yet?
+                            <button
+                            type="button"
+                              class="t-link border-0 bg--light btn-link t-link--primary text--primary"
+                              data-bs-target="#vfSignIn" data-bs-toggle="modal"
+                            >
+                              sign in
+                            </button>
+                          </p>
+                        </div>
+                        <div class="col-12">
+                          <div class="auth-form__divider">
+                            <span
+                              class="
+                                d-block
+                                text-center text-capitalize
+                                auth-form__divider-text
+                              "
+                            >
+                              or
+                            </span>
+                          </div>
+                        </div>
+                        <div class="col-12">
+                          <p class="mb-0 text-capitalize text-center">
+                            Continue with social media
+                          </p>
+                        </div>
+
+                        <div class="col-12">
+                          <ul class="list list--row justify-content-center">
+                            <li class="list--row__item">
+                              <a
+                                href="#"
+                                class="
+                                  t-link
+                                  icon icon--circle icon--md
+                                  bg--primary
+                                  t-text-white
+                                  t-link--light
+                                "
+                              >
+                                <i class="bx bxl-facebook"></i>
+                              </a>
+                            </li>
+                            <li class="list--row__item">
+                              <a
+                                href="#"
+                                class="
+                                  t-link
+                                  icon icon--circle icon--md
+                                  bg--danger
+                                  t-text-white
+                                  t-link--light
+                                "
+                              >
+                                <i class="bx bxl-youtube"></i>
+                              </a>
+                            </li>
+                            <li class="list--row__item">
+                              <a
+                                href="#"
+                                class="
+                                  t-link
+                                  icon icon--circle icon--md
+                                  bg--info
+                                  t-text-white
+                                  t-link--light
+                                "
+                              >
+                                <i class="bx bxl-twitter"></i>
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 2 End-->
+    
+    <!-- search Popup -->
+    <div class="body-overlay" id="body-overlay"></div>
+    <div class="search-popup" id="search-popup">
+      <form action="#" class="search-form">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search....." />
+        </div>
+        <button type="submit" class="submit-btn">
+          <i class="bx bx-search"></i>
+        </button>
+      </form>
+    </div>
+    <!--search Popup -->
+    <!-- Hero  -->
+    <div class="hero" >
+      <header class="header">
+        <div class="container">
+          <div class="row g-0 align-items-center align-items-lg-start">
+            <div class="col-6 col-lg-2">
+              <!-- Logo  -->
+              <a href="/" class="logo">
+                <img
+                  src="/static/assets/img/droonaviationlogo.png"
+                  alt="viserhyip"
+                  class="img-fluid logo__is"
+                />
+              </a>
+              <!-- Logo End -->
+            </div>
+            <div class="col-6 col-lg-10">
+              <ul class="list list--row d-none d-lg-flex align-items-center">
+                <li class="list--row__item">
+                  <ul class="list vf-info-list">
+                    <li class="vf-info-list__item">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img
+                            src="/static/assets/img/icon-envelop.png"
+                            alt="viserfly"
+                            class="img-fluid"
+                          />
+                        </div>
+                        <div class="ms-3">
+                          <p class="mb-0 fw-bold text-uppercase t-text-white">
+                            Email
+                          </p>
+                          <p class="mb-0 t-text-white vf-info-list__text">
+                            <a href="https://template.viserlab.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="1d797870725d79707c7471335e7270">[email&#160;protected]</a>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="vf-info-list__item">
+                      <div class="d-flex">
+                        <div class="flex-shrink-0">
+                          <img
+                            src="/static/assets/img/icon-location.png"
+                            alt="viserfly"
+                            class="img-fluid"
+                          />
+                        </div>
+                        <div class="ms-3">
+                          <p class="mb-0 fw-bold text-uppercase t-text-white">
+                            Address
+                          </p>
+                          <p class="mb-0 t-text-white vf-info-list__text">
+                            Infopark Campus, Kochi, Kakkanad, Kerala 682030.
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list--row__item ms-auto">
+                  <div class="d-flex">
+                    <div class="flex-shrink-0">
+                      <img
+                        src="/static/assets/img/icon-phone.png"
+                        alt="viserfly"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="ms-3">
+                      <p
+                        class="mb-0 fw-md text-uppercase t-text-white xxl-text"
+                      >
+                        +123 - 456 - 7890
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="nav-container" style="margin-top: -38px;">
+                <!-- Navigation Toggler  -->
+                <div
+                  class="
+                    d-flex
+                    justify-content-end
+                    align-items-center
+                    d-lg-none
+                  "
+                >
+                  <a
+                    href="#"
+                    class="
+                      primary-menu__link
+                      t-link
+                      search--toggler
+                      text-center
+                      t-text-white
+                    "
+                  >
+                    <i class="bx bx-search"></i>
+                  </a>
+                  <button
+                    type="button"
+                    class="btn btn--sqr btn--primary nav--toggle t-text-white"
+                  >
+                    <i class="bx bx-menu"></i>
+                  </button>
+                </div>
+                <!-- Navigation Toggler End -->
+
+                <!-- Navigation  -->
+                <nav class="navs">
+                  <!-- Primary Menu  -->
+                  <ul class="list primary-menu">
+                    <li class="primary-menu__list has-sub">
+                      <a href="/" class="primary-menu__link text-capitalize">
+                        home
+                      </a>
+                      
+                    </li>
+                    <li class="primary-menu__list has-sub">
+                      <a href="{% url 'Home:about' %}" class="primary-menu__link text-capitalize"
+                        >About</a
+                      >
+                    </li>
+                    <li class="primary-menu__list has-sub">
+                      <a href="{% url 'Home:course' %}" class="primary-menu__link text-capitalize"
+                        >courses</a
+                      >
+                    </li>
+              
+                    <li class="primary-menu__list has-sub">
+                      <a
+                        href="{% url 'Home:blog' %}"
+                        class="primary-menu__link text-capitalize"
+                        >blog</a
+                      >
+                     
+                    </li>
+
+                    <li class="primary-menu__list has-sub">
+                      <a
+                        href="{% url 'Home:contact' %}"
+                        class="primary-menu__link text-capitalize"
+                        >Contact</a
+                      >
+                     
+                    </li>
+                    
+                    
+                  </ul>
+                  <!-- Primary Menu End -->
+                  <!-- User Login  -->
+                  
+                    
+                        <li class="login-register" style="margin-left:468px;list-style:none;">
+                            <a href="{% url 'Admin:AHome' %}" >{{request.user.username}}</a>
+                            {% if request.user.is_authenticated %}
+                            <li class="login-register" style="list-style:none;">
+                              <a  href="{% url 'accounts:logout' %}">Log Out</a>
+                            </li>
+                            {% else %}
+                            <li class="login-register" style="list-style:none;">
+                                
+                              <a   href="{% url 'accounts:login' %}" style="color:#ffffff; background:#21a7d0; padding:8px">LOGIN</a>
+                            </li>
+                            {% endif %}
+                        <li class="btn-part" style="list-style:none;margin-left: 10px;">
+                            <a class="apply-btn" href="{% url 'Home:Online-Admission' %}" style="color:#ffffff; background:#21a7d0; padding:8px">Apply Now</a>
+                        </li>
+                    
+                
+
+                  <!-- User Login End -->
+                </nav>
+                <!-- Navigation End -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {% block body %} {% endblock %}
+      
+    <!-- CTA  -->
+    <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="cta bg--primary">
+              <div class="row g-3 align-items-lg-center">
+                <div class="col-12 col-lg-4 col-xl-3">
+                  <div class="footer-logo text-center">
+                    <img
+                      src="/static/assets/img/droonaviationlogo.png"
+                      alt="viserfly"
+                      class="img-fluid"
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-lg-8 col-xl-9">
+                  <ul
+                    class="
+                      list list--row
+                      justify-content-center justify-content-md-between
+                      align-items-md-center
+                    "
+                  >
+                    <li class="list--row__item">
+                      <h3
+                        class="
+                          text-capitalize
+                          t-text-white
+                          mt-0
+                          text-center text-md-start
+                          ps-xl-3
+                        "
+                      >
+                        Like to become a Aeronautics
+                      </h3>
+                      <p class="t-text-white text-center text-md-start ps-xl-3">
+                        Airport management refers to the overall administration, coordination, and operation of an airport facility. 
+                      </p>
+                    </li>
+                    <li class="list--row__item">
+                      <a
+                        href="{% url 'Home:Online-Admission' %}"
+                        class="t-link btn btn--light btn--lg text-capitalize"
+                        >become an pilot</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- CTA End -->
+  
+      <!-- Footer  -->
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="container">
+            <div class="row g-4">
+              <div class="col-md-6 col-lg-3">
+                <h4 class="mt-0 t-text-white text-capitalize">about me</h4>
+                <p class="t-text-white t-short-para" style="text-align: justify;">
+                  Welcome to the Aviation Institute, your gateway to a successful career in the aviation industry.
+                </p>
+                <ul class="list list--row">
+                  <li class="list--row__item">
+                    <a href="#" class="t-link social-icon--alt">
+                      <i class="bx bxl-facebook"></i>
+                    </a>
+                  </li>
+                  <li class="list--row__item">
+                    <a href="#" class="t-link social-icon--alt">
+                      <i class="bx bxl-twitter"></i>
+                    </a>
+                  </li>
+                  <li class="list--row__item">
+                    <a href="#" class="t-link social-icon--alt">
+                      <i class="bx bxl-vimeo"></i>
+                    </a>
+                  </li>
+                  <li class="list--row__item">
+                    <a href="#" class="t-link social-icon--alt">
+                      <i class="bx bxl-pinterest-alt"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h4 class="mt-0 t-text-white text-capitalize">courses</h4>
+                <ul class="list list--column">
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:course' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Airport Management
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:course' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Hotel Management
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:course' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Travel & Tourism Management
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:course' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Aviation Programming 
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:course' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      CSA & PSA Training Institute
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h4 class="mt-0 t-text-white text-capitalize">quick link</h4>
+                <ul class="list list--column">
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:about' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:blog' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:privacypolicy' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Privacy & Policy
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:Term-and-condition' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                      Term & Condition
+                    </a>
+                  </li>
+                  <li class="list--column__item">
+                    <a
+                      href="{% url 'Home:Refund-&-Cancellation' %}"
+                      class="t-link t-link--primary t-text-white text-capitalize"
+                    >
+                    Refunds & Cancellation
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6 col-lg-3">
+                <h4 class="mt-0 t-text-white text-capitalize">newsletter</h4>
+                <form action="#" class="newsletter t-mt-30">
+                  <input
+                    type="text"
+                    class="newsletter__input form-control"
+                    placeholder="email address"
+                  />
+                  <button class="newsletter__btn flex-shrink-0">
+                    <i class="bx bxs-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright">
+          <p class="mb-0 t-text-white text-center text-capitalize">
+            Copyright &copy; 2022. All Rights Reserved By Webcreate Solutions
+          </p>
+        </div>
+      </footer>
+      <!-- Footer End -->
+  
+      <!-- Back To Top -->
+      <div class="back-to-top">
+        <span class="back-top">
+          <i class="bx bxs-chevron-up"></i>
+        </span>
+      </div>
+      <!-- Back To Top End -->
+  
+      <!-- Scripts  -->
+      <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="assets/js/jquery.js"></script>
+      <script src="/static/assets/js/jquery.nice-select.js"></script>
+      <script src="/static/assets/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/assets/js/slick.js"></script>
+      <script src="/static/assets/js/odometer.js"></script>
+      <script src="/static/assets/js/odo-counter.js"></script>
+      <script src="/static/assets/js/jquery.magnific-popup.js"></script>
+      <script src="/static/assets/js/jquery.filterizr.min.js"></script>
+      <script src="/static/assets/js/app.js"></script>
+      <!-- sweet alart -->
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+      <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    </body>
+  
+  <!-- Mirrored from template.viserlab.com/viserfly/demo/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Jun 2023 06:34:40 GMT -->
+  </html>

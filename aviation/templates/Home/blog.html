@@ -1,0 +1,209 @@
+{% extends 'Base/basefile.html' %}{% block title %} Air India Institute | India's leading Aviation &
+Tourism Management Institute{% endblock %}{% block metadescription %}
+<meta name="description" content="" />
+<meta name="tittle" content="" />
+<meta name="keywords" content="" />
+{%endblock %} {% block body %} 
+
+<!-- Blog Section  -->
+<section class="section">
+        <div class="section__head">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8 col-xl-8">
+                <div class="text-center">
+                  <div class="d-flex align-items-center justify-content-center">
+                    <div class="vf-custom-icon me-2 flex-shrink-0">
+                      <img
+                        src="/static/assets/img/icon-plane.png"
+                        alt="viserfly"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <p class="mb-0 text-capitalize text--primary xxl-text">
+                      blog post
+                    </p>
+                  </div>
+                  <h2 class="text-capitalize" style="color:#33BDFF; margin-top:524px
+                  ">Our latest blog</h2>
+                  <p class="t-short-para mx-auto mb-0" style="color: #33BDFF;">
+                    we are thrilled to have you join us on this exciting journey of exploration, inspiration, and discovery. 
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row g-4">
+            {% for b in bl %}
+            <div class="col-md-6 col-lg-4">
+              <div class="blog-post">
+                <a href="{% url 'Home:blogdetailview' b.blog_slug %}" class="t-link blog-post__img">
+                  {% if b.blog_img %}
+                  <img
+                    src="{{b.blog_img.url}}"
+                    alt="viserfly"
+                    class="blog-post__img-is"
+                  />
+                  {% endif %}
+                </a>
+                <div class="blog-post__body">
+                  <div class="blog-post__date">
+                    <h4 class="mt-0 mb-1 t-text-white">{{b.blog_date}}</h4>
+                    <p class="mb-0 t-text-white text-capitalize">may</p>
+                  </div>
+                  <h4 class="text-capitalize mt-0">
+                    <a href="{% url 'Home:blogdetailview' b.blog_slug %}" class="t-link blog-post__title">
+                      {{b.blog_title}}
+                    </a>
+                  </h4>
+                  <ul class="list list--row">
+                    <li class="list--row__item">
+                      <div class="blog-post__meta">
+                        <div class="blog-post__meta-icon me-2">
+                          <i class="bx bxs-user"></i>
+                        </div>
+                        <div class="blog-post__meta-text text-uppercase">
+                          By
+                          <a href="#" class="t-link t-link--primary t-text"
+                            >{{b.blog_author}}</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list--row__item">
+                      <div class="blog-post__meta">
+                        <div class="blog-post__meta-icon me-2">
+                          <i class="bx bx-message-dots"></i>
+                        </div>
+                        <div class="blog-post__meta-text text-uppercase">
+                          <a href="#" class="t-link t-link--primary t-text"
+                            >25 comments</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="blog-post__article mt-4 mb-0">
+                    {{b.blog_desp | safe | slice:":100"}}... 
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+            <!-- <div class="col-md-6 col-lg-4">
+              <div class="blog-post">
+                <a href="blog-details.html" class="t-link blog-post__img">
+                  
+                  <img
+                    src="{{b.blog_img.url}}"
+                    alt="viserfly"
+                    class="blog-post__img-is"
+                  />
+                  
+                </a>
+                <div class="blog-post__body">
+                  <div class="blog-post__date">
+                    <h4 class="mt-0 mb-1 t-text-white"></h4>
+                    <p class="mb-0 t-text-white text-capitalize">may</p>
+                  </div>
+                  <h4 class="text-capitalize mt-0">
+                    <a href="blog-details.html" class="t-link blog-post__title">
+                      
+                    </a>
+                  </h4>
+                  <ul class="list list--row">
+                    <li class="list--row__item">
+                      <div class="blog-post__meta">
+                        <div class="blog-post__meta-icon me-2">
+                          <i class="bx bxs-user"></i>
+                        </div>
+                        <div class="blog-post__meta-text text-uppercase">
+                          By
+                          <a href="#" class="t-link t-link--primary t-text"
+                            ></a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list--row__item">
+                      <div class="blog-post__meta">
+                        <div class="blog-post__meta-icon me-2">
+                          <i class="bx bx-message-dots"></i>
+                        </div>
+                        <div class="blog-post__meta-text text-uppercase">
+                          <a href="#" class="t-link t-link--primary t-text"
+                            >25 comments</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="blog-post__article mt-4 mb-0">
+                    
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-6 col-lg-4">
+              <div class="blog-post">
+                <a href="blog-details.html" class="t-link blog-post__img">
+                  <img
+                    src="/static/assets/img/team-3.jpg"
+                    alt="viserfly"
+                    class="blog-post__img-is"
+                  />
+                </a>
+                <div class="blog-post__body">
+                  <div class="blog-post__date">
+                    <h4 class="mt-0 mb-1 t-text-white">26</h4>
+                    <p class="mb-0 t-text-white text-capitalize">may</p>
+                  </div>
+                  <h4 class="text-capitalize mt-0">
+                    <a href="blog-details.html" class="t-link blog-post__title">
+                      Faucibus Nullam Quis Ante Eti Qrci Egetros Saucibus Tincnt.
+                    </a>
+                  </h4>
+                  <ul class="list list--row">
+                    <li class="list--row__item">
+                      <div class="blog-post__meta">
+                        <div class="blog-post__meta-icon me-2">
+                          <i class="bx bxs-user"></i>
+                        </div>
+                        <div class="blog-post__meta-text text-uppercase">
+                          By
+                          <a href="#" class="t-link t-link--primary t-text"
+                            >Robart Jons</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list--row__item">
+                      <div class="blog-post__meta">
+                        <div class="blog-post__meta-icon me-2">
+                          <i class="bx bx-message-dots"></i>
+                        </div>
+                        <div class="blog-post__meta-text text-uppercase">
+                          <a href="#" class="t-link t-link--primary t-text"
+                            >25 comments</a
+                          >
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <p class="blog-post__article mt-4 mb-0">
+                    Donec interdum metus ehendrerit auet doldiam sagittis ligula
+                    eget egestas libero turpis velsra smiunc nulla testa peina ola
+                    oreso loerm ipsums amet
+                  </p>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- Blog Section End -->
+
+      {% endblock %}
